@@ -14,7 +14,10 @@
   $apicall .= "&format=$format";
   $apicall .="&apiKey=$apiKey";
 
-  //$resp = simplexml_load_file($apicall);
+    //this will show that a connection has occurred but i wont beable to acess the data
+$resp = simplexml_load_file($apicall);
+
+// trying a more simple code
  $items = json_decode ($string, true);
   // foreach($data["items"] as $item){
     // echo $item;

@@ -3,11 +3,11 @@ error_reporting(0);
 
 $endpoint = 'http://svcs.ebay.com/services/search/FindingService/v1';
 $version = '1.0.0';
-$appid = 'JonahDow-Books-PRD-793587284-2ba1979c'; 
+$appid = 'JonahDow-Books-PRD-793587284-2ba1979c';
 $globalid = 'EBAY-US';
-$query = $_GET['query']; 
+$query = $_GET['query'];
 $numquery = $_GET['numValue'];
-$safequery = urlencode($query); 
+$safequery = urlencode($query);
 
 $apicall = "$endpoint?";
 $apicall .= "OPERATION-NAME=findItemsByKeywords";
@@ -48,10 +48,10 @@ else {
   $safequery=urlencode($query);
   //construct call
   $apicall = "$endpoint?";
-  $apicall .= "query=$query";
+  $apicall .= "query=$safequery";
   $apicall .= "&format=$format";
   $apicall .="&apiKey=$apiKey";
-  
+
   //echo $apicall;
 //Assigns the JSON file to $resp
 $resp = file_get_contents($apicall);
@@ -112,7 +112,7 @@ for($i = 0; $i < 10; $i++)
 		</table>
 			<p>
 				<b>Walmart results:</b>
-				<?php 
+				<?php
 				for($i = 0; $i < 10; $i++)
 				{
 					if($items['items'][$i]['msrp'] > 0)

@@ -1,6 +1,6 @@
 <?php
 	include 'comm.php';
-	$LessonName = $_REQUEST['LessonName'];
+	$LessonName = $_GET['LessonName'];
 	$sql = "SELECT LessonNo, LessonName FROM lessons WHERE LessonName =('$LessonName')";
 	$result = $conn->query($sql);
 	

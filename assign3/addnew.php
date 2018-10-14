@@ -14,7 +14,7 @@
 		Welcome to Program Help. Please enter our mailing list for help!
 	</p>
 
-	<form name = "users" method = "get" action = "confirmAdd.php"/>
+	<form name = "users" method = "get" action = "background.php">
 
 		Email:
 		<input type = "text" length = "60" name = "email" />
@@ -28,6 +28,5 @@
 	</form>
 
 	<a href = "home.php">Home page</a>
-
 </body>
 </html>

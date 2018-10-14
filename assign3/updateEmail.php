@@ -2,7 +2,7 @@
 <body
 <br>
 
-<form name="user" method="get"  action="confirmEmailUpdate.php">
+<form name="user" method="get"  action="confirmAddEmail.php">
 
 Old Email:
 <input type="text" length="60" name="Old_email" />

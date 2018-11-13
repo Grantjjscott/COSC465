@@ -6,7 +6,7 @@ function getProd($category){
     $data = array();
     $data['title'] = "bananas";
     $data['id'] = "4011";
-    $data['price'] = ".0012";
+    $data['price'] = " 0.012";
     $data['quantity'] = "200";
 
     return $data;
@@ -15,16 +15,16 @@ function getProd($category){
     $data = array();
     $data['title'] = "apples";
     $data['id'] = "4017";
-    $data['price'] = ".45";
+    $data['price'] = " 0.45";
     $data['quantity'] = "200";
 
     return $data;
   }
-    elseif ($category == "Mangos"){
+    elseif ($category == "mangos"){
       $data = array();
       $data['title'] = "Mangos";
       $data['id'] = "5056";
-      $data['price'] = ".75";
+      $data['price'] = " 0.75";
       $data['quantity'] = "50";
 
       return $data;

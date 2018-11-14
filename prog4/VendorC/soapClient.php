@@ -1,5 +1,7 @@
 <?php
-require_once 'nusoap/lib/nusoap.php';
+
+$path = $_SERVER['DOCUMENT_ROOT']. "/prog4/nusoap/lib/nusoap.php";
+require_once $path;
 $product = $_REQUEST['productName'];
 $quantity = $_REQUEST['productQuantity'];
 $maxPrice = $_REQUEST['productMaxPrice'];
@@ -35,7 +37,33 @@ $error = $client->getError();
     echo " <br> ID:  ". $result['id'];
     echo "<br> Quantity: ". $result['quantity'];
 
+
+    echo "<h3> What people are saying about this vendor:</h3>";
+
+    $sql = "SELECT username, comment from comments";
+     include 'comm.php';
+
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+    	  echo "<br><br><b>Here's what </b>". $row["username"]. "<b> had to say!</b>" . "<br>"."<br>"."<br>";
+    		echo $row["comment"]. "<br>". "<br>"."<br>"."<br>";
+        }
+    } else {
+        echo "0 results";
+    }
 }
 }
 
  ?>
+  <html>
+  	<h2> write your own comment</h2>
+  	<form name = "users" method = "get" action = "commentBack.php">
+  		Nickname:
+  		<input type = "text" length = "20" name = "nickname" />
+  		Comment:
+  		<input type = "text" length = "1000" name = "comment" />
+  		<input type = "submit" value = "POST" />
+  	</form>
+  </html>

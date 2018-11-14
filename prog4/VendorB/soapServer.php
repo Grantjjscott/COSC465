@@ -1,5 +1,6 @@
 <?php
-require_once 'nusoap/lib/nusoap.php';
+$path = $_SERVER['DOCUMENT_ROOT']. "/prog4/nusoap/lib/nusoap.php";
+require_once $path;
 //$product = (string)$_REQUEST['productName'];
 
 

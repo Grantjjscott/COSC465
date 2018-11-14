@@ -3,7 +3,7 @@
 </html>
 
 <?php
-include 'comm.php';
+include 'comm1.php';
 $sql = "SELECT username, comment from comments";
 $result = $conn->query($sql);
 

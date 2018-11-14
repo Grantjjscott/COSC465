@@ -27,6 +27,7 @@ $error = $client->getError();
     echo"<h2>Error wwww</h2><pre>".$error. "</pre>";
   }
   else{
+    echo"<h2> Vendor C</h2>";
     echo"<h2>Product</h2><pre>";
     echo "</pre>";
     echo " <br> Name: ". $result['title'];

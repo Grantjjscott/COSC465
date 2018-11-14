@@ -36,10 +36,13 @@ function getProd($category){
 }
  $server = new soap_server();
  $server->register("getProd");
+ 
   //$server->service($HTTP_RAW_POST_DATA);
 
   if ( !isset($HTTP_RAW_POST_DATA) ) {
     $HTTP_RAW_POST_DATA = file_get_contents('php://input');
   }
   $server->service($HTTP_RAW_POST_DATA);
+
+  print_r(getProd("apples"));
  ?>

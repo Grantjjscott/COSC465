@@ -3,12 +3,9 @@ require_once 'nusoap/lib/nusoap.php';
 $product = $_REQUEST['productName'];
 $quantity = $_REQUEST['productQuantity'];
 $maxPrice = $_REQUEST['productMaxPrice'];
-$client = new nusoap_client("http://localhost/COSC465/prog4/VendorA/SoapServer.php");
+$client = new nusoap_client("http://localhost/COSC465/prog4/VendorC/soapServer.php");
 
-$searchData = array("category" => $product,
-                    "quantity" => $quantity,
-                    "maxprice" => $maxPrice
-                    );
+$searchData = array("category" => $product);
 $result = $client->call("getProd",$searchData);
 
 if (is_string($result)){
@@ -30,8 +27,11 @@ $error = $client->getError();
     echo "<br> Price: $". $result['price'];
     echo " <br> ID:  ". $result['id'];
     echo "<br> Quantity: ". $result['quantity'];
-
+  }
 }
-}
 
+// echo "<hr /> <h2>Request</h2>";
+// echo "<pre>" . htmlspecialchars($client->request, ENT_QUOTES) . "</pre>";
+// echo "<h2>Response</h2>";
+// echo "<pre>" . htmlspecialchars($client->response, ENT_QUOTES) . "</pre>";
  ?>

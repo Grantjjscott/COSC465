@@ -3,19 +3,23 @@ require_once 'nusoap/lib/nusoap.php';
 $product = $_REQUEST['productName'];
 $quantity = $_REQUEST['productQuantity'];
 $maxPrice = $_REQUEST['productMaxPrice'];
-$client = new nusoap_client("http://localhost/COSC465/prog4/VendorA/SoapServer.php");
+
+$client = new nusoap_client("http://localhost/prog4/Vendora/SoapServer.php");
+$client->soap_defencoding = 'utf-8';
+$client->decode_utf8 = false;
 
 $searchData = array("category" => $product,
                     "quantity" => $quantity,
-                    "maxprice" => $maxPrice
-                    );
+                    "maxprice" => $maxPrice);
+
 $result = $client->call("getProd",$searchData);
 
 if (is_string($result)){
   //echo "<h2>Fault</h2><pre>";
-  print_r($result);
-  echo "</pre>";
-
+print_r($result);
+  //echo "</pre>";
+  header("Location:http://localhost/prog4/VendorB/SoapClient.php?productName=".$product."&productQuantity=".$quantity."&productMaxPrice=".$maxPrice);
+    exit;
   exit;
 }
 else{

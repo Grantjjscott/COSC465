@@ -1,41 +1,49 @@
 <?php
-
+//require 'nusoap/lib/nusoap.php';
 class eventServer
 {
 	public $menuOptions;
-public $type;
-public function setSwitch($type){
-	switch ($type)
+	public $type = "";
+	
+	public function setSwitch($type)
 	{
-		case 'Starter':
-			$menuOptions;
-			break;
-		case 'Main':
-			$menuOptions;
-			break;
-		case 'Dessert':
-			$menuOptions;
-			break;
-		default:
-			$menuOptions;
-			break;
+		switch ($type)
+		{
+			case 'Starter':
+				$menuOptions;
+				break;
+			case 'Main':
+				$menuOptions;
+				break;
+			case 'Dessert':
+				$menuOptions;
+				break;
+			default:
+				$menuOptions;
+				break;
+		}
 	}
-}
-	/**
+	
+	
     protected $events = array(
-        1 => array("name" => "Excellent PHP Event",
+        1 => array("name" => "Excellent PHP",
             "date" => 1454994000,
             "location" => "Amsterdam"
         ),
         2 => array("name" => "Marvellous PHP Conference",
             "date" => 1454112000,
-            "location" => "Toronto"),
+            "location" => "Toronto"
+		),
         3 => array("name" => "Fantastic Community Meetup",
+            "date" => 1454894800,
+            "location" => "Johannesburg"
+		),
+		4 => array("name" => "Fantastic Community Meetup",
             "date" => 1454894800,
             "location" => "Johannesburg"
         )
     );
-	*/
+	
 
     /**
      * Get all the events we know about

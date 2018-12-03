@@ -9,12 +9,12 @@
 		<p>
 			Choose from the menu:
 		</p>
-			<form action = "soap-Client.php">
-				<input type = "radio" name = "item" value = "starter">Starters<br>
-				<input type = "radio" name = "item" value = "main">Main Courses<br>
-				<input type = "radio" name = "item" value = "dessert">Desserts<br>
-				<input type = "radio" name = "item" value = "drink">Drinks<br>
-				<input type = "submit" value = Order />
+			<form action = "soap-client.php">
+				<input type = "radio" name = "item" value = "Starter">Starters<br>
+				<input type = "radio" name = "item" value = "Main">Main Courses<br>
+				<input type = "radio" name = "item" value = "Dessert">Desserts<br>
+				<input type = "radio" name = "item" value = "Drink">Drinks<br>
+				<input type = "submit" name = "submit" value = Order />
 			</form>
 	</body>
 </html>

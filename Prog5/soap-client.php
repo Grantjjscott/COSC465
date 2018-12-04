@@ -6,7 +6,7 @@ $item = $_GET['item'];
 ini_set("soap.wsdl_cache_enabled", "0");
 
 try {
-    $client = new SoapClient('http://localhost/COSC465/Prog5/soap-server.php?wsdl');
+    $client = new SoapClient('http://localhost/COSC465/Prog5/RestA/soap-server.php?wsdl');
     //$searchData = "";
 	//$result = $client->call("getProd", $searchData);
     $events = $client->getEventById(intval($item));
@@ -22,7 +22,7 @@ try {
       // print_r($client->__getFunctions());
 
 	//echo "Your " . $item . " has been ordered and is on its way."
-
+function postResults($item,$events){
   echo "<table border='1'>
 
   <tr>
@@ -40,20 +40,38 @@ try {
 	switch($item)
 	{
 		case "1":
-			echo "Your starter: soup, salad, etc. has been ordered and is on its way.";
+			echo "Your starter: ". $events['name']. " has been ordered and is on its way.";
 			break;
 		case "2":
-			echo "Your main dish: curry, chicken, etc. has been ordered and is on its way.";
+			echo "Your main dish: ". $events['name']. " has been ordered and is on its way.";
 			break;
 		case "3":
-			echo "Your dessert: Ice cream, etc. has been ordered and is on its way.";
+			echo "Your dessert: ". $events['name']. "has been ordered and is on its way.";
 			break;
 		case "4":
-			echo "Your drink:". $events['name']. "has been ordered and is on its way.";
+			echo "Your drink: ". $events['name']. "has been ordered and is on its way.";
 			break;
 	}
 
+}
 
+postResults($item, $events);
+
+try {
+    $client = new SoapClient('http://localhost/COSC465/Prog5/RestB/soap-server.php?wsdl');
+    //$searchData = "";
+	//$result = $client->call("getProd", $searchData);
+    $events2 = $client->getEventById(intval($item));
+
+	//$events = $client->getEvents();
+    //$events = $client->getEventByIDLoc(1,"Amsterdam");
+    // $events = $client->getEventByLoc("Toronto");
+    print_r($events);
+} catch (SoapFault $e) {
+    var_dump($e);
+}
+
+postResults($item, $events2);
 
 /*
 echo " <hr /> <h2>Request</h2>";

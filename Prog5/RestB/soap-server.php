@@ -9,4 +9,3 @@ $server->setClass('eventServer');
 //$server->register("getEventById");
 $server->handle();
 ?>
-

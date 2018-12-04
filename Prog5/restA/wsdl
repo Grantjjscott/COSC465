@@ -1,7 +1,7 @@
 <?xml version='1.0' ?>
-<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost:8080/COSC465/Prog5/soap-server.php" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="Events" targetNamespace="http://localhost:8080/COSC465/Prog5/soap-server2.php">
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost:8080/soap-server2.php" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="Events" targetNamespace="http://localhost:8080/soap-server2.php">
   <types>
-    <xsd:schema targetNamespace="http://localhost:8080/COSC465/Prog5/soap-server2.php">
+    <xsd:schema targetNamespace="http://localhost:8080/soap-server2.php">
       <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
     </xsd:schema>
   </types>
@@ -30,45 +30,45 @@
   <binding name="EventsBinding" type="tns:EventsPort">
     <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
     <operation name="getEvents">
-      <soap:operation soapAction="http://localhost:8080/COSC465/Prog5/soap-server2.php#getEvents"/>
+      <soap:operation soapAction="http://localhost:8080/soap-server2.php#getEvents"/>
       <input>
-        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/COSC465/Prog5/soap-server2.php"/>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/soap-server2.php"/>
       </input>
       <output>
-        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/COSC465/Prog5/soap-server2.php"/>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/soap-server2.php"/>
       </output>
     </operation>
     <operation name="getEventById">
-      <soap:operation soapAction="http://localhost:8080/COSC465/Prog5/soap-server2.php#getEventById"/>
+      <soap:operation soapAction="http://localhost:8080/soap-server2.php#getEventById"/>
       <input>
-        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/COSC465/Prog5/soap-server2.php"/>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/soap-server2.php"/>
       </input>
       <output>
-        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/COSC465/Prog5/soap-server2.php"/>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/soap-server2.php"/>
       </output>
     </operation>
     <operation name="getEventByIDLoc">
       <soap:operation soapAction="http://localhost:8080/soap-server2.php#getEventByIDLoc"/>
       <input>
-        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/COSC465/Prog5/soap-server2.php"/>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Chapter7-RPC-SOAP/soap-server2.php"/>
       </input>
       <output>
-        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/COSC465/Prog5/soap-server2.php"/>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Chapter7-RPC-SOAP/soap-server2.php"/>
       </output>
     </operation>
     <operation name="getEventByLoc">
       <soap:operation soapAction="http://localhost:8080/soap-server2.php#getEventByLoc"/>
       <input>
-        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/COSC465/Prog5/soap-server2.php"/>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Chapter7-RPC-SOAP/soap-server2.php"/>
       </input>
       <output>
-        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/COSC465/Prog5/soap-server2.php"/>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Chapter7-RPC-SOAP/soap-server2.php"/>
       </output>
     </operation>
   </binding>
   <service name="EventsService">
     <port name="EventsPort" binding="tns:EventsBinding">
-      <soap:address location="http://localhost/COSC465/Prog5/soap-server.php"/>
+      <soap:address location="http://localhost/COSC465/prog5/RestA/soap-server.php"/>
     </port>
   </service>
   <message name="getEventsIn"/>

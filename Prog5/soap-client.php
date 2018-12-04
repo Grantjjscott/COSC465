@@ -9,7 +9,8 @@ try {
     $client = new SoapClient('http://localhost/COSC465/Prog5/soap-server.php?wsdl');
     //$searchData = "";
 	//$result = $client->call("getProd", $searchData);
-    $events = $client->getEventById(1);
+    $events = $client->getEventById(intval($item));
+
 	//$events = $client->getEvents();
     //$events = $client->getEventByIDLoc(1,"Amsterdam");
     // $events = $client->getEventByLoc("Toronto");
@@ -19,7 +20,7 @@ try {
 }
        //print_r($client->__getTypes());
       // print_r($client->__getFunctions());
-	
+
 	//echo "Your " . $item . " has been ordered and is on its way."
 	switch($item)
 	{
@@ -36,6 +37,7 @@ try {
 			echo "Your drink: Pepsi, Coke, etc. has been ordered and is on its way.";
 			break;
 	}
+
 /*
 echo " <hr /> <h2>Request</h2>";
 echo "<pre>" . htmlspecialchars($client->request, ENT_QUOTES) . "</pre>";
@@ -43,4 +45,3 @@ echo "<h2>Response</h2>";
 echo "<pre>" . htmlspecialchars($client->response, ENT_QUOTES) . "</pre>";
 */
 ?>
-

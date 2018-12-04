@@ -4,7 +4,7 @@ class eventServer
 {
 	public $menuOptions;
 	public $type = "";
-	
+
 	public function setSwitch($type)
 	{
 		switch ($type)
@@ -23,27 +23,27 @@ class eventServer
 				break;
 		}
 	}
-	
-	
+
+
     protected $events = array(
-        1 => array("name" => "Excellent PHP",
-            "date" => 1454994000,
-            "location" => "Amsterdam"
+        1 => array("name" => "soup, salad, etc.",
+            "price" => 4.99,
+            "type" => "Starter"
         ),
-        2 => array("name" => "Marvellous PHP Conference",
-            "date" => 1454112000,
-            "location" => "Toronto"
+        2 => array("name" => "chicken cury",
+            "price" => 7.99,
+            "type" => "Main"
 		),
-        3 => array("name" => "Fantastic Community Meetup",
-            "date" => 1454894800,
-            "location" => "Johannesburg"
+        3 => array("name" => "ice cream, cake, fruit salad",
+            "price" => 4.99,
+            "type" => "Desert"
 		),
-		4 => array("name" => "Fantastic Community Meetup",
-            "date" => 1454894800,
-            "location" => "Johannesburg"
+		4 => array("name" => "soda, juice, water",
+            "price" => 1.99,
+            "type" => "Drink"
         )
     );
-	
+
 
     /**
      * Get all the events we know about

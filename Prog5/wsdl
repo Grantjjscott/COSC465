@@ -68,7 +68,7 @@
   </binding>
   <service name="EventsService">
     <port name="EventsPort" binding="tns:EventsBinding">
-      <soap:address location="http://localhost/COSC465/Labs/wsdl/soap-server.php"/>
+      <soap:address location="http://localhost/COSC465/prog5/soap-server.php"/>
     </port>
   </service>
   <message name="getEventsIn"/>

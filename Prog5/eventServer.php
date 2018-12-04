@@ -2,8 +2,9 @@
 
 class eventServer
 {
-	$menuOptions;
-	
+	public $menuOptions;
+public $type;
+public function setSwitch($type){
 	switch ($type)
 	{
 		case 'Starter':
@@ -12,13 +13,14 @@ class eventServer
 		case 'Main':
 			$menuOptions;
 			break;
-		case 'Dessert'
+		case 'Dessert':
 			$menuOptions;
 			break;
 		default:
 			$menuOptions;
 			break;
 	}
+}
 	/**
     protected $events = array(
         1 => array("name" => "Excellent PHP Event",

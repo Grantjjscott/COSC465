@@ -9,7 +9,7 @@
 		<p>
 			Choose from the menu:
 		</p>
-			<form action = "soapClient.php">
+			<form action = "soap-Client.php">
 				<input type = "radio" name = "item" value = "starter">Starters<br>
 				<input type = "radio" name = "item" value = "main">Main Courses<br>
 				<input type = "radio" name = "item" value = "dessert">Desserts<br>

@@ -22,21 +22,38 @@ try {
       // print_r($client->__getFunctions());
 
 	//echo "Your " . $item . " has been ordered and is on its way."
+
+  echo "<table border='1'>
+
+  <tr>
+
+  <th>Items</th>
+
+  <th>Price</th>
+  </tr>";
+
+  echo "<td>" . $events['name'] . "</td>";
+
+  echo "<td>" . $events['price'] . "</td>";
+
+
 	switch($item)
 	{
-		case "Starter":
+		case "1":
 			echo "Your starter: soup, salad, etc. has been ordered and is on its way.";
 			break;
-		case "Main":
+		case "2":
 			echo "Your main dish: curry, chicken, etc. has been ordered and is on its way.";
 			break;
-		case "Dessert":
+		case "3":
 			echo "Your dessert: Ice cream, etc. has been ordered and is on its way.";
 			break;
-		case "Drink":
-			echo "Your drink: Pepsi, Coke, etc. has been ordered and is on its way.";
+		case "4":
+			echo "Your drink:". $events['name']. "has been ordered and is on its way.";
 			break;
 	}
+
+
 
 /*
 echo " <hr /> <h2>Request</h2>";

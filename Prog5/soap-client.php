@@ -2,11 +2,25 @@
 //opcache_reset();
 //require 'nusoap/lib/nusoap.php';
 $item = $_GET['item'];
+
 //print_r($item);
 ini_set("soap.wsdl_cache_enabled", "0");
 
 try {
-    $client = new SoapClient('http://localhost/COSC465/Prog5/RestA/soap-server.php?wsdl');
+    //echo $item;
+    // if (isset($_POST["submit"])){
+    //   $itemType = $_POST["item"];
+    // }
+
+    if ($item == 1){
+      $client = new SoapClient('http://localhost/COSC465/Prog5/RestA/soap-server.php?wsdl');
+      echo "Using RestA";
+      echo "<br>";
+    } else {
+      $client = new SoapClient('http://localhost/COSC465/Prog5/RestB/soap-server.php?wsdl');
+      echo "Using RestB";
+      echo "<br>";
+    }
     //$searchData = "";
 	//$result = $client->call("getProd", $searchData);
     $events = $client->getEventById(intval($item));
@@ -57,21 +71,21 @@ function postResults($item,$events){
 
 postResults($item, $events);
 
-try {
-    $client = new SoapClient('http://localhost/COSC465/Prog5/RestB/soap-server.php?wsdl');
-    //$searchData = "";
-	//$result = $client->call("getProd", $searchData);
-    $events2 = $client->getEventById(intval($item));
+// try {
+//     $client = new SoapClient('http://localhost/COSC465/Prog5/RestB/soap-server.php?wsdl');
+//     //$searchData = "";
+// 	//$result = $client->call("getProd", $searchData);
+//     $events2 = $client->getEventById(intval($item));
 
-	//$events = $client->getEvents();
-    //$events = $client->getEventByIDLoc(1,"Amsterdam");
-    // $events = $client->getEventByLoc("Toronto");
-    print_r($events);
-} catch (SoapFault $e) {
-    var_dump($e);
-}
+// 	//$events = $client->getEvents();
+//     //$events = $client->getEventByIDLoc(1,"Amsterdam");
+//     // $events = $client->getEventByLoc("Toronto");
+//     print_r($events);
+// } catch (SoapFault $e) {
+//     var_dump($e);
+// }
 
-postResults($item, $events2);
+// postResults($item, $events2);
 
 /*
 echo " <hr /> <h2>Request</h2>";
